@@ -17,7 +17,7 @@ def gaussSeidel(A,b,precision):
                 if j > i:
                     soma2 += A[i][j] * x[j]
             xnew[i] = (b[i] - soma1 - soma2)/A[i][i]
-            print(f"x{i}: {xnew[i]} ", end="")
+            #print(f"x{i}: {xnew[i]} ", end="")
         
         error = max([abs(xnew[i] - x[i]) for i in range(n)])
         #print(error)
@@ -54,10 +54,10 @@ def gaussSeidelrelx(A, b, w, precision):
     
 
 def main():
-    A = [[3,-1,-1],[1,3,1],[1,-1,2]]
-    b = [1,5,2]
-    print(gaussSeidelrelx(A, b, 0.80, 1e-10))
-    #print(gaussSeidel(A, b, 1e-10))
+    A = [[4,1,2],[1,2,1],[1,0.1,1]]
+    b = [1,4,-3]
+    #print(gaussSeidelrelx(A, b, 0.80, 1e-10))
+    print(gaussSeidel(A, b, 10e-6))
 
 if __name__ == "__main__":
     main()

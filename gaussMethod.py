@@ -20,8 +20,8 @@ def gaussElimination(A,b):
 
 def main():
 
-    A = [[0.448,0.832,0.193],[0.421,0.784,-0.207],[-0.319,0.884,0.279]]
-    b = [1,0,0]
+    A = [[1,1,0,1],[2,1,-1,-1],[-1,-2,3,-1],[3,-1,-1,2]]
+    b = [2,1,4,-3]
     res, b = gaussElimination(A, b)
     printMatrix(res)
     print(b)

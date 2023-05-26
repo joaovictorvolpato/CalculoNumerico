@@ -34,11 +34,12 @@ def solveLinearSystem(A, b):
     for k in range(len(b)-1, -1, -1):
         x[k] = (y[k] - sum([U[k][j] * x[j] for j in range(k+1, len(b))]))
 
+    print(x)
     return x
 
 def main():
-    A = [[4,2,3],[2,-4,-1],[-1,1,4]]
-    b = [7,1,-5]
+    A = [[1,1,2],[3,-5,1],[2,1,-1]]
+    b = [27,-9,1]
     print(solveLinearSystem(A, b))
 
 def printMatrix(A):

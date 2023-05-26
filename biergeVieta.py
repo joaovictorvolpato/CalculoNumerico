@@ -1,5 +1,5 @@
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import math
 
 
@@ -38,6 +38,7 @@ def BiergeVieta(polynomial:list, x0:float, precision:float):
         x0 = x0 - np.divide(R,R1)
         ite += 1
         error = calculatePolynomial(polynomial, x0)
+        print(R)
     return x0, ite
 
 def plotPolynomial(polynomial:list, x0:float):
@@ -49,9 +50,9 @@ def plotPolynomial(polynomial:list, x0:float):
     plt.plot(x0, calculatePolynomial(polynomial, x0), 'ro')
     plt.show()
 
-polynomial = [1,0,2,-1]
-x0 = 1
-precision = 10e-10
+polynomial = [1,-9,27,-31,12]
+x0 = 6
+precision = 10e-8
 x, ite = BiergeVieta(polynomial, x0, precision)
 #plotPolynomial(polynomial, x)
 print(f'x: {x}, ite: {ite}')
